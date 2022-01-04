@@ -1,36 +1,9 @@
-# Medium Unlocker [![Actions Status](https://github.com/und3fined/medium-unlocker/workflows/build/badge.svg)](https://github.com/und3fined/medium-unlocker/actions)  [![GiveMeACoffee](https://img.shields.io/badge/Give%20Me%20a%20Coffee!-Paypal-blue)](https://paypal.me/und3fined)
+# Medium Unlocker Custom
 
-<p align="center">
-  <a href="https://addons.mozilla.org/firefox/addon/medium-unlocker" target="_blank">
-    <img width="149" height="48" src="https://github.com/und3fined/medium-unlocker/blob/main/badges/Firefox.png?raw=true">
-  </a>
-  <a href="https://microsoftedge.microsoft.com/addons/detail/medium-unlocker/fdnjgkpbbjgmolfhobejeoglagepngpe" target="_blank">
-    <img width="186" height="48" src="https://github.com/und3fined/medium-unlocker/blob/main/badges/Edge.png?raw=true">
-  </a>
-</p>
+![](https://github.com/gioxx/medium-unlocker-custom/raw/main/public/medium-128.png)
 
-Read Medium content without limit! Aka replacer for Medium Unlimited.
+Unlocks [medium.com](https://outgoing.prod.mozaws.net/v1/fdcfc6c153f9138e01c641a3d640928eaf0866b31ff8e847597396d703317c4b/http%3A//medium.com) for unlimited reads, no membership required (Custom version of [medium-unlocker by und3fined ](https://github.com/und3fined/medium-unlocker) with some other domains added).
 
+**To add more compatible domains please open a new issue.**
 
-### Get more information
-
-Please visit [Wiki page](https://github.com/und3fined/medium-unlocker/wiki)
-
-### How to install Extensions?
-
-- Chrome -> https://github.com/und3fined/medium-unlocker/wiki/Install-extension-for-Chromium-(base)-browser
-
-### Features
-
-- Unlock graphql version of medium.com
-
-### F.A.Q
-
-- Q: How to report bug?/How to add more domain?
-
-Create new issue
-
-
-### Screenshot
-
-![Github](https://user-images.githubusercontent.com/2163878/147834338-dc43fa34-a850-4e28-9b6b-c9c28bc8bfdf.png)
+Available for Mozilla Firefox on https://addons.mozilla.org/en-US/firefox/addon/gioxxorg-medium-unlocker/
