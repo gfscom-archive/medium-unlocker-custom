@@ -1,0 +1,31 @@
+name: build
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  deploy:
+    name: Initial for release
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get version
+      id: vars
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+    - name: Package extension for release
+      env:
+        RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+      run: |
+        cp LICENSE public/
+        mv public medium-unlocker-custom
+        zip -r medium-unlocker-custom.zip medium-unlocker-custom/
+    - name: Publish release
+      uses: marvinpinto/action-automatic-releases@latest
+      env:
+        RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
+      with:
+        repo_token: "${{ secrets.GHUB_TOKEN }}"
+        prerelease: false
+        files: |
+          medium-unlocker-custom.zip
