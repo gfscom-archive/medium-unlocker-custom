@@ -3,6 +3,9 @@ on:
   push:
     tags:
       - 'v*.*.*'
+  
+  workflow_dispatch:
+  
 jobs:
   deploy:
     name: Initial for release
