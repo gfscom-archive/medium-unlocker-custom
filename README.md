@@ -1,4 +1,5 @@
 # Medium Unlocker Custom
+[![build](https://github.com/gioxx/medium-unlocker-custom/actions/workflows/ci.yml/badge.svg)](https://github.com/gioxx/medium-unlocker-custom/actions/workflows/ci.yml)
 
 ![](https://github.com/gioxx/medium-unlocker-custom/raw/main/public/medium-128.png)
 
