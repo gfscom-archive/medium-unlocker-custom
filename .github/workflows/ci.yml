@@ -18,8 +18,8 @@ jobs:
         RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
       run: |
         cp LICENSE public/
-        mv public medium-unlocker
-        zip -r medium-unlocker.zip medium-unlocker/
+        mv public medium-unlocker-custom
+        zip -r medium-unlocker-custom.zip medium-unlocker-custom/
     - name: Publish release
       uses: marvinpinto/action-automatic-releases@latest
       env:
@@ -28,4 +28,4 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: false
         files: |
-          medium-unlocker.zip
+          medium-unlocker-custom.zip
