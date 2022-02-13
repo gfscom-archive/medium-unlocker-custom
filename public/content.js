@@ -50,8 +50,8 @@ var content = function() {
       return s
     })().$$.on_mount.push(t)
   }
-  const p = [],
-    m = [],
+  const m = [],
+    p = [],
     h = [],
     $ = [],
     g = Promise.resolve();
@@ -66,17 +66,17 @@ var content = function() {
   function w() {
     const t = s;
     do {
-      for (; x < p.length;) {
-        const t = p[x];
+      for (; x < m.length;) {
+        const t = m[x];
         x++, d(t), v(t.$$)
       }
-      for (d(null), p.length = 0, x = 0; m.length;) m.pop()();
+      for (d(null), m.length = 0, x = 0; p.length;) p.pop()();
       for (let t = 0; t < h.length; t += 1) {
         const n = h[t];
         b.has(n) || (b.add(n), n())
       }
       h.length = 0
-    } while (p.length);
+    } while (m.length);
     for (; $.length;) $.pop()();
     y = !1, b.clear(), d(t)
   }
@@ -88,19 +88,19 @@ var content = function() {
       t.dirty = [-1], t.fragment && t.fragment.p(t.ctx, n), t.after_update.forEach(_)
     }
   }
-  const E = new Set;
+  const k = new Set;
 
-  function k(t, n) {
-    -1 === t.$$.dirty[0] && (p.push(t), y || (y = !0, g.then(w)), t.$$.dirty.fill(0)), t.$$.dirty[n / 31 | 0] |= 1 << n % 31
+  function E(t, n) {
+    -1 === t.$$.dirty[0] && (m.push(t), y || (y = !0, g.then(w)), t.$$.dirty.fill(0)), t.$$.dirty[n / 31 | 0] |= 1 << n % 31
   }
 
-  function C(c, i, a, l, f, p, m, h = [-1]) {
+  function C(c, i, a, l, f, m, p, h = [-1]) {
     const $ = s;
     d(c);
     const g = c.$$ = {
       fragment: null,
       ctx: null,
-      props: p,
+      props: m,
       update: t,
       not_equal: f,
       bound: e(),
@@ -115,11 +115,11 @@ var content = function() {
       skip_bound: !1,
       root: i.target || $.$$.root
     };
-    m && m(g.root);
+    p && p(g.root);
     let y = !1;
     if (g.ctx = a ? a(c, i.props || {}, ((t, n, ...e) => {
         const o = e.length ? e[0] : n;
-        return g.ctx && f(g.ctx[t], g.ctx[t] = o) && (!g.skip_bound && g.bound[t] && g.bound[t](o), y && k(c, t)), n
+        return g.ctx && f(g.ctx[t], g.ctx[t] = o) && (!g.skip_bound && g.bound[t] && g.bound[t](o), y && E(c, t)), n
       })) : [], g.update(), y = !0, o(g.before_update), g.fragment = !!l && l(g.ctx), i.target) {
       if (i.hydrate) {
         const t = function(t) {
@@ -127,7 +127,7 @@ var content = function() {
         }(i.target);
         g.fragment && g.fragment.l(t), t.forEach(u)
       } else g.fragment && g.fragment.c();
-      i.intro && ((b = c.$$.fragment) && b.i && (E.delete(b), b.i(x))),
+      i.intro && ((b = c.$$.fragment) && b.i && (k.delete(b), b.i(x))),
         function(t, e, c, i) {
           const {
             fragment: u,
@@ -146,7 +146,7 @@ var content = function() {
   }
   var I = t => !!document.getElementById(t);
 
-  function j(n) {
+  function S(n) {
     let e, o, r;
     return {
       c() {
@@ -171,7 +171,7 @@ var content = function() {
     }
   }
 
-  function B(t, n, e) {
+  function j(t, n, e) {
     let {
       name: o
     } = n;
@@ -186,11 +186,10 @@ var content = function() {
       "name" in t && e(0, o = t.name)
     }, [o]
   }
-  const N = "mediumUnlocker",
-    O = document.getElementById(N);
-  if (!O) {
+  const q = "medium-unlocker";
+  if (!document.getElementById(q)) {
     const t = document.createElement("div");
-    t.setAttribute("id", N), document.body.appendChild(t)
+    t.setAttribute("id", q), document.body.appendChild(t)
   }
   return new class extends class {
     $destroy() {
@@ -211,12 +210,12 @@ var content = function() {
     }
   } {
     constructor(t) {
-      super(), C(this, t, B, j, c, {
+      super(), C(this, t, j, S, c, {
         name: 0
       })
     }
   }({
-    target: O,
+    target: document.querySelector("#medium-unlocker"),
     props: {
       name: "Medium Unlocker"
     }
